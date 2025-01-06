@@ -8,13 +8,7 @@ const Header = () => {
     //for large screen
     <div className="flex items-center justify-between">
       <div className="flex gap-1 items-center cursor-pointer">
-        <Image
-          src="/waggy_logo.png"
-          alt="logo image"
-          width={80}
-          height={80}
-          objectFit="contain"
-        />
+        <Image src="/waggy_logo.png" alt="logo image" width={80} height={80} />
         <div className="flex flex-col">
           <h1 className="text-2xl md:text-4xl font-light">Waggy</h1>
           <p className=" text-base md:text-lg text-gray-600 font-normal">
@@ -22,7 +16,7 @@ const Header = () => {
           </p>
         </div>
       </div>
-      <div className="hidden md:flex border border-gray-400 rounded-md p-2 h-14 lg:w-96 md:w-80 sm:w-48 items-center justify-between">
+      <div className="hidden lg:flex border border-gray-400 rounded-md p-2 h-14 lg:w-96 md:w-80 sm:w-48 items-center justify-between">
         <input
           type="text"
           className="outline-none p-1 md:text-lg text-base"
@@ -37,7 +31,7 @@ const Header = () => {
           <h1 className="text-base sm:text-lg text-gray-600">Phone</h1>
           <p className="text-lg sm:text-xl text-gray-700">+977 9865410868</p>
         </div>
-        <div className="flex flex-col">
+        <div className="flex flex-col items-end md:items-start">
           <h1 className="text-base sm:text-lg text-gray-600">Email</h1>
           <p className="text-lg sm:text-xl text-gray-700">Waggy@shop.com</p>
         </div>
