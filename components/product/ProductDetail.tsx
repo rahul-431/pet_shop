@@ -6,22 +6,24 @@ import { useState } from "react";
 import { toast } from "sonner";
 import { Button } from "../ui/button";
 import { FaCartPlus, FaHeart } from "react-icons/fa";
-
-
-const ProductDetail = ({
-  _id,
-  name,
-  rating,
-  price,
-  discount,
-  mainImage,
-  otherImages,
-  status,
-  sizes,
-  colors,
-  quantity,
-}: ProductCardDetails) => {
+import { GoPlus } from "react-icons/go";
+import { FiMinus } from "react-icons/fi";
+const ProductDetail = ({ data }: ProductCardDetails) => {
+  const {
+    _id,
+    name,
+    rating,
+    price,
+    discount,
+    mainImage,
+    otherImages,
+    status,
+    sizes,
+    colors,
+    quantity,
+  } = data;
   const [orderQuantity, setOrderQuantity] = useState<number>(1);
+  const [activeImage, setActiveImage] = useState<string>(mainImage);
   const handleIncrement = () => {
     if (orderQuantity === quantity)
       toast.error("Can not exceed availble quantity");
@@ -29,52 +31,68 @@ const ProductDetail = ({
   };
   const hanleAddToCart = () => {};
   return (
-    <div className="grid grid-cols-2 gap-5">
+    <div className="grid grid-cols-1 sm:grid-cols-2 gap-12 w-full lg:px-12 md:px-6 px-5">
       <div className="flex flex-col gap-2">
-        <div className="relative w-full max-w-min max-h-min rounded-md">
+        <div className="relative w-[296px] h-48 md:w-96 md:h-60 lg:w-[424px] lg:h-[340px]">
           <Image
-            src={mainImage}
-            alt={`${name}'s image`}
+            src={activeImage}
+            alt={`${activeImage}'s image`}
             layout="fill"
-            objectFit="cover"
-            className="relative"
+            objectFit="contain"
+            className="relative rounded-md bg-gray-200"
           />
         </div>
         <div className="flex gap-2">
           {otherImages.map((image, index) => (
-            <div key={index} className="relative w-20 h-20 rounded-md">
+            <div
+              key={index}
+              onClick={() => setActiveImage(image)}
+              className="cursor-pointer relative w-[80px] sm:w-[100px] h-[80px]"
+            >
               <Image
                 src={image}
                 alt="other image"
                 layout="fill"
-                objectFit="cover"
-                className="relative"
+                objectFit="contain"
+                className="relative rounded-md bg-gray-200"
               />
             </div>
           ))}
         </div>
       </div>
       <div className="flex flex-col gap-4">
-        <div className="flex flex-col gap-2">
-          <h1 className="text-lg sm:text-xl font-semibold">{name}</h1>
+        <div className="flex flex-col gap-1">
+          <h1 className="text-lg sm:text-xl md:text-2xl font-semibold">
+            {name}
+          </h1>
           <Ratings rating={rating} />
-          <h1 className="text-lg sm:text-xl font-semibold">$ {price}</h1>
+          <h1 className="text-lg sm:text-xl font-semibold">${price}</h1>
         </div>
         <hr />
         <div className="flex justify-between">
           <div className="flex flex-col gap-2">
             <h1>Available Sizes</h1>
-            {sizes.map((item, index) => (
-              <p className="p-2 border border-gray-300 rounded-md" key={index}>
-                {item}
-              </p>
-            ))}
+            <div className="flex gap-2">
+              {sizes.map((item, index) => (
+                <p
+                  className="w-10 text-center p-2 border border-gray-300 rounded-md"
+                  key={index}
+                >
+                  {item}
+                </p>
+              ))}
+            </div>
           </div>
           <div className="flex flex-col gap-2">
             <h1>Avaialble colors</h1>
-            {colors.map((item, index) => (
-              <Checkbox color={item} key={index} />
-            ))}
+            <div className="flex gap-2">
+              {colors.map((item, index) => (
+                <p
+                  className={`w-5 h-5 bg-${item}-600 rounded-full`}
+                  key={index}
+                />
+              ))}
+            </div>
           </div>
         </div>
         <hr />
@@ -83,33 +101,39 @@ const ProductDetail = ({
             {quantity > 1 ? "Only" : "Last"} {quantity} left, Make it yours!
           </p>
           <div className="flex items-center gap-5">
-            <div className="py-2 px-4 flex items-center gap-2">
+            <div className="py-2 px-4 flex items-center gap-4 bg-gray-200 rounded-md">
               <button
+                className="text-xl"
                 disabled={orderQuantity == 1}
-                onClick={() => setOrderQuantity((prev) => prev + 1)}
+                onClick={() => setOrderQuantity((prev) => prev - 1)}
               >
-                -
+                <FiMinus />
               </button>
-              <p>{orderQuantity}</p>
+              <p className="text-lg">{orderQuantity}</p>
               <button
+                className="text-xl"
                 disabled={orderQuantity === quantity}
                 onClick={handleIncrement}
               >
-                +
+                <GoPlus />
               </button>
             </div>
-            <Button onClick={hanleAddToCart} className="space-x-1">
-              <span> Add to Cart</span>
-              <span>
+            <div className="flex gap-2">
+              <Button
+                size="sm"
+                onClick={hanleAddToCart}
+                className="bg-transparent hover:bg-yellow-500 hover:text-white text-black border border-yellow-500"
+              >
                 <FaCartPlus />
-              </span>
-            </Button>
-            <Button onClick={hanleAddToCart} className="space-x-1">
-              <span>Add to wishlist</span>
-              <span>
+              </Button>
+              <Button
+                size="sm"
+                onClick={hanleAddToCart}
+                className="bg-transparent hover:bg-yellow-500 hover:text-white text-black border border-yellow-500"
+              >
                 <FaHeart />
-              </span>
-            </Button>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
