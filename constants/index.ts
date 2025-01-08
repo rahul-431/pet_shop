@@ -1,4 +1,3 @@
-
 export const Categories = [
   {
     value: "clothes",
@@ -102,5 +101,67 @@ export const Pages = [
   {
     href: "/account",
     label: "FAQS",
+  },
+];
+
+//fake data
+export const ProductList = [
+  {
+    product: {
+      mainImage:
+        "https://images.unsplash.com/photo-1422565096762-bdb997a56a84?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      name: "Hoodie",
+      status: "Sale",
+      price: 100,
+      discount: 20,
+      rating: 4,
+    },
+  },
+  {
+    product: {
+      mainImage: "/cat.png",
+      name: "Hoodie",
+      status: "Sale",
+      price: 100,
+      discount: 20,
+      rating: 5,
+    },
+  },
+  {
+    product: {
+      mainImage: "/bird.png",
+      name: "Hoodie",
+      status: "Sale",
+      price: 100,
+      discount: 20,
+      rating: 3.5,
+    },
+  },
+  {
+    product: {
+      mainImage: "/fish.png",
+      name: "Hoodie",
+      status: "Sale",
+      price: 100,
+      discount: 20,
+      rating: 2,
+    },
+  },
+];
+export const AllProductList = [
+  {
+    data: ProductList,
+    shopLink: "#",
+    title: "Pet Foodies",
+  },
+  {
+    data: ProductList,
+    shopLink: "#",
+    title: "Pet Clothing",
+  },
+  {
+    data: ProductList,
+    shopLink: "#",
+    title: "Pet Toys",
   },
 ];
