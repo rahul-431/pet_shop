@@ -67,7 +67,7 @@ export function Hero() {
               </h1>
               <Link
                 href={item.href}
-                className="flex items-center space-x-2 p-2 md:p-4 rounded-md bg-yellow-600 hover:bg-yellow-500 text-white font-semibold tracking-wide"
+                className="flex items-center space-x-2 p-2 md:p-4 rounded-md border border-yellow-600 hover:bg-yellow-600 hover:text-white font-semibold tracking-wide"
               >
                 <span>Shop Now</span>
                 <span>

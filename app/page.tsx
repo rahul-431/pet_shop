@@ -1,3 +1,4 @@
+import Flash from "@/components/home/Flash";
 import { Hero } from "@/components/home/Hero";
 import ShopList from "@/components/home/ShopList";
 import ProductList from "@/components/product/ProductList";
@@ -11,12 +12,14 @@ export default function Home() {
       <div className="flex flex-col w-full gap-5">
         {AllProductList.map((item, index) => (
           <ProductList
+            key={index}
             data={item.data}
             title={item.title}
             shopLink={item.shopLink}
           />
         ))}
       </div>
+      <Flash />
     </div>
   );
 }

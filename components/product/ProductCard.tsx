@@ -33,13 +33,22 @@ const ProductCard = ({ product }: ProductCardType) => {
           <p className="text-lg font-semibold">${price}</p>
         </div>
         <div className="flex gap-2 items-center">
-          <Button size="sm" className="bg-yellow-600 hover:bg-yellow-500">
+          <Button
+            size="sm"
+            className="border bg-transparent text-black hover:text-white border-yellow-600 hover:bg-yellow-600"
+          >
             <FaHeart />
           </Button>
-          <Button size="sm" className="bg-yellow-600 hover:bg-yellow-500">
+          <Button
+            size="sm"
+            className="border bg-transparent text-black hover:text-white border-yellow-600 hover:bg-yellow-600"
+          >
             <FaCartPlus />
           </Button>
-          <Button size="sm" className="bg-yellow-600 hover:bg-yellow-500">
+          <Button
+            size="sm"
+            className="border bg-transparent text-black hover:text-white border-yellow-600 hover:bg-yellow-600"
+          >
             <MdOutlineArrowForwardIos />
           </Button>
         </div>
