@@ -1,3 +1,4 @@
+
 export const Categories = [
   {
     value: "clothes",
@@ -32,6 +33,52 @@ export const NavLinks = [
   {
     href: "/",
     label: "Get pro",
+  },
+];
+
+export const FooterQuickLinks = [
+  {
+    href: "/",
+    label: "Home",
+  },
+  {
+    href: "/about",
+    label: "About Us",
+  },
+  {
+    href: "/offer",
+    label: "Offer",
+  },
+  {
+    href: "/services",
+    label: "Services",
+  },
+  {
+    href: "/contact",
+    label: "Contact Us",
+  },
+];
+
+export const HelpCenterLinks = [
+  {
+    href: "/faqs",
+    label: "FAQS",
+  },
+  {
+    href: "/payment",
+    label: "Payment",
+  },
+  {
+    href: "/returns_refunds",
+    label: "Returns & Refunds",
+  },
+  {
+    href: "/checkout",
+    label: "Checkout",
+  },
+  {
+    href: "/deliveryInfo",
+    label: "Delivery Information",
   },
 ];
 
