@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
 import Ratings from "../shared/Ratings";
-import { Checkbox } from "../ui/checkbox";
 import { useState } from "react";
 import { toast } from "sonner";
 import { Button } from "../ui/button";
@@ -10,14 +9,11 @@ import { GoPlus } from "react-icons/go";
 import { FiMinus } from "react-icons/fi";
 const ProductDetail = ({ data }: ProductCardDetails) => {
   const {
-    _id,
     name,
     rating,
     price,
-    discount,
     mainImage,
     otherImages,
-    status,
     sizes,
     colors,
     quantity,
