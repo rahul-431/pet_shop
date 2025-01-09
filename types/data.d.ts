@@ -1,13 +1,3 @@
-type ProductCardType = {
-  product: {
-    mainImage: string;
-    name: string;
-    status: string;
-    price: number;
-    discount?: number;
-    rating: number;
-  };
-};
 type ProductCardDetails = {
   data: {
     _id: string;
@@ -23,8 +13,32 @@ type ProductCardDetails = {
     quantity: number;
   };
 };
-type ProductListType = {
+
+type ProductCardType = {
+  product: {
+    mainImage: string;
+    name: string;
+    status: string;
+    price: number;
+    discount?: number;
+    rating: number;
+  };
+};
+type ListType = {
   title: string;
-  shopLink: string;
-  data: ProductCardType[];
+  link: string;
+  which?: string;
+  buttonLabel?: string;
+  data: (ProductCardType | BlogType)[];
+};
+
+type BlogType = {
+  blog: {
+    _id: string;
+    author: string;
+    image: string;
+    title: string;
+    createdAt: string;
+    text: string;
+  };
 };

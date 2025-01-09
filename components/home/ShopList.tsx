@@ -37,7 +37,7 @@ const ShopList = () => {
         <Link
           key={index}
           href={item.href}
-          className="flex flex-col gap-2 items-center text-yellow-300 hover:text-yellow-400"
+          className="flex flex-col gap-2 items-center text-gray-200 hover:text-gray-300"
         >
           {item.icon}
           <h1 className="text-lg text-black">{item.label}</h1>

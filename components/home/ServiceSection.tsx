@@ -29,14 +29,14 @@ const ServiceSection = () => {
     },
   ];
   return (
-    <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 lg:px-12 md:px-6 px-5 my-10">
+    <div className="grid xl:grid-cols-4 lg:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-6 lg:px-12 md:px-6 px-5 py-10 md:py-16 my-4 bg-pink-100">
       {services.map((item, index) => (
         <div key={index} className="flex flex-col gap-2 items-center">
           <div className="p-5 w-20 h-20 flex items-center justify-center rounded-full border border-gray-500 text-2xl">
             {item.icon}
           </div>
           <h1 className="text-2xl font-semibold">{item.title}</h1>
-          <p className="text-gray-500">{item.description}</p>
+          <p className="text-gray-500 text-center">{item.description}</p>
         </div>
       ))}
     </div>
