@@ -1,5 +1,6 @@
 import Flash from "@/components/home/Flash";
 import { Hero } from "@/components/home/Hero";
+import Quotes from "@/components/home/Quotes";
 import ShopList from "@/components/home/ShopList";
 import ProductList from "@/components/product/ProductList";
 import { AllProductList } from "@/constants";
@@ -20,6 +21,7 @@ export default function Home() {
         ))}
       </div>
       <Flash />
+      <Quotes/>
     </div>
   );
 }

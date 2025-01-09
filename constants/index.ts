@@ -104,12 +104,26 @@ export const Pages = [
   },
 ];
 
+//Testimonials samples
+export const Testimonials = [
+  {
+    text: "The best place to find everything my pup needs! The toys are high-quality, and the treats are irresistible!",
+    author: "— Emily R., Happy Dog Mom",
+  },
+  {
+    text: "I found the perfect cozy bed for my cat here. The variety is amazing, and the prices are super reasonable!",
+    author: "— James P., Cat Lover",
+  },
+  {
+    text: "Shopping here is a breeze! I ordered a leash, some treats, and grooming supplies, and they all arrived quickly. My dog and I couldn’t be happier!",
+    author: "— Samantha K., Loyal Customer",
+  },
+];
 //fake data
 export const ProductList = [
   {
     product: {
-      mainImage:
-        "https://images.unsplash.com/photo-1422565096762-bdb997a56a84?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      mainImage: "/dog.png",
       name: "Hoodie",
       status: "Sale",
       price: 100,

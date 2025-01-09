@@ -15,7 +15,7 @@ const ProductCard = ({ product }: ProductCardType) => {
           src={mainImage}
           alt={`${name}'s image`}
           layout="fill"
-          objectFit="cover"
+          objectFit="contain"
           className="rounded-t-lg"
         />
         {status && (
