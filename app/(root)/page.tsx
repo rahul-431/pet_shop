@@ -1,6 +1,9 @@
+import Register from "@/components/form/Register";
+import HomeRegister from "@/components/form/Register";
 import Flash from "@/components/home/Flash";
 import { Hero } from "@/components/home/Hero";
 import Quotes from "@/components/home/Quotes";
+import ServiceSection from "@/components/home/ServiceSection";
 import ShopList from "@/components/home/ShopList";
 import ProductList from "@/components/product/ProductList";
 import { AllProductList, DemoProductList } from "@/constants";
@@ -27,6 +30,18 @@ export default function Home() {
         title="Best Selling Products"
         shopLink="#"
       />
+      <div className="w-full bg-pink-100 py-10 md:py-14">
+        <div className="max-w-lg flex flex-col gap-6 mx-auto">
+          <div className="font-semibold text-3xl sm:text-4xl md:text-5xl flex flex-col gap-2 items-center">
+            <h1>Get 20% Off On</h1>
+            <h1 className="text-yellow-600">First Purchase</h1>
+          </div>
+          <div className="w-80 mx-auto sm:w-full ">
+            <Register />
+          </div>
+        </div>
+      </div>
+      <ServiceSection />
     </div>
   );
 }
