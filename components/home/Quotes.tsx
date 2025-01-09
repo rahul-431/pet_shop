@@ -41,8 +41,8 @@ const Quotes = () => {
           </CarouselItem>
         ))}
       </CarouselContent>
-      <CarouselPrevious className="absolute left-40 top-[396px]   md:left-48 sm:h-10 sm:w-10 border text-black border-yellow-600 hover:bg-yellow-600 hover:text-white" />
-      <CarouselNext className="absolute right-40 top-[396px] md:right-48  sm:h-10 sm:w-10 border border-yellow-500  text-black hover:bg-yellow-600 hover:text-white" />
+      <CarouselPrevious className="absolute left-40 top-[396px] sm:top-96   md:left-48 sm:h-10 sm:w-10 border text-black border-yellow-600 hover:bg-yellow-600 hover:text-white" />
+      <CarouselNext className="absolute right-40 top-[396px] sm:top-96 md:right-48  sm:h-10 sm:w-10 border border-yellow-500  text-black hover:bg-yellow-600 hover:text-white" />
     </Carousel>
   );
 };

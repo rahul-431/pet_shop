@@ -120,7 +120,7 @@ export const Testimonials = [
   },
 ];
 //fake data
-export const ProductList = [
+export const DemoProductList = [
   {
     product: {
       mainImage: "/dog.png",
@@ -164,17 +164,17 @@ export const ProductList = [
 ];
 export const AllProductList = [
   {
-    data: ProductList,
+    data: DemoProductList,
     shopLink: "#",
     title: "Pet Foodies",
   },
   {
-    data: ProductList,
+    data: DemoProductList,
     shopLink: "#",
     title: "Pet Clothing",
   },
   {
-    data: ProductList,
+    data: DemoProductList,
     shopLink: "#",
     title: "Pet Toys",
   },
