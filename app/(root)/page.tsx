@@ -1,5 +1,4 @@
 import Register from "@/components/form/Register";
-import HomeRegister from "@/components/form/Register";
 import Flash from "@/components/home/Flash";
 import { Hero } from "@/components/home/Hero";
 import Quotes from "@/components/home/Quotes";

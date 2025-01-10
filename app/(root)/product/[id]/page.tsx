@@ -1,6 +1,6 @@
 import ProductCard from "@/components/product/ProductCard";
 import ProductDetail from "@/components/product/ProductDetail";
-import { ProductList } from "@/constants";
+import { DemoProductList } from "@/constants";
 
 const page = () => {
   const data = {
@@ -26,7 +26,7 @@ const page = () => {
           Related Products
         </h1>
         <div className="grid gap-6 xl:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 w-full mb-5">
-          {ProductList.map((item, index) => (
+          {DemoProductList.map((item, index) => (
             <ProductCard key={index} product={item.product} />
           ))}
         </div>

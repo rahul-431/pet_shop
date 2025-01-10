@@ -50,7 +50,9 @@ const ProductDetail = ({ data }: ProductCardDetails) => {
                 alt="other image"
                 layout="fill"
                 objectFit="contain"
-                className="relative rounded-md bg-gray-200"
+                className={`${
+                  activeImage === image && "border border-yellow-500"
+                } relative rounded-md bg-gray-200`}
               />
             </div>
           ))}
