@@ -69,7 +69,6 @@ type ProductRequest = {
   price: number;
   discount: number;
   stock: number;
-  isFeatured?: boolean;
 };
 
 type ProductResponse = {
@@ -96,7 +95,7 @@ type ReviewRequest = {
 };
 type ReviewResponse = {
   _id: string;
-  user: string;
+  user: UserResponse;
   product: string;
   rating: number;
   comment: string;
@@ -104,7 +103,7 @@ type ReviewResponse = {
   updatedAt: string;
 };
 type CartRequest = {
-  user: string;
+  userId: string;
   items: [
     {
       product: string;
@@ -114,6 +113,7 @@ type CartRequest = {
   totalAmount?: number;
 };
 type CartResponse = {
+  _id: string;
   user: string;
   items: [
     {
@@ -141,12 +141,11 @@ type OrderRequest = {
       price: number;
     }
   ];
-  totalAmount: number;
   shippingAddress: Address;
 };
 type OrderResponse = {
   _id: string;
-  user: string;
+  user: UserResponse;
   items: [
     {
       product: ProductResponse;
@@ -174,6 +173,13 @@ type UserRegitraion = {
   email: string;
   password: string;
 };
+type UserUpdateRequest = {
+  name: string;
+  email: string;
+  password: string;
+  phone: string;
+  address: Address;
+};
 type UserLogin = {
   email: string;
   password: string;
@@ -184,6 +190,7 @@ type UserDetailsRegistraion = {
 };
 
 type UserResponse = {
+  _id: string;
   name: string;
   email: string;
   address: Address;

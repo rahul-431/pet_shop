@@ -3,7 +3,7 @@ import { connectDB } from "../connection";
 import User from "../models/user.model";
 import { Wishlist } from "../models/wishlist.model";
 
-export async function addToWishlist(userId: string, productId: string) {
+export async function addToWishlist({ userId, productId }: WishlistRequest) {
   try {
     await connectDB();
     const wishlist = await Wishlist.findOneAndUpdate(
@@ -25,9 +25,9 @@ export async function addToWishlist(userId: string, productId: string) {
 export async function getWishlist(userId: string) {
   try {
     await connectDB();
-    const wishlist = await Wishlist.findOne({ user: userId }).populate(
-      "products"
-    );
+    const wishlist: WishlistResponse = await Wishlist.findOne({
+      user: userId,
+    }).populate("products");
     if (!wishlist) throw new Error("Wishlist not found");
     return wishlist;
   } catch (error: any) {
@@ -35,7 +35,10 @@ export async function getWishlist(userId: string) {
   }
 }
 
-export async function removeFromWishlist(userId: string, productId: string) {
+export async function removeFromWishlist({
+  userId,
+  productId,
+}: WishlistRequest) {
   try {
     await connectDB();
     const wishlist = await Wishlist.findOneAndUpdate(

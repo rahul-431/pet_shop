@@ -10,8 +10,8 @@ const OrderSchema = new Schema(
           ref: "Product",
           required: true,
         },
+        price: Number,
         quantity: { type: Number, required: true },
-        price: { type: Number, required: true },
       },
     ],
     status: {

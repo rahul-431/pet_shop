@@ -2,7 +2,7 @@
 import { connectDB } from "../connection";
 import User from "../models/user.model";
 
-export async function createUser(data: any) {
+export async function createUser(data: UserRegitraion) {
   try {
     await connectDB();
     const user = await User.create(data);
@@ -17,20 +17,20 @@ export async function getUserById(userId: string) {
     await connectDB();
     const user = await User.findById(userId).populate("wishlist cart");
     if (!user) throw new Error("User not found");
-    return user;
+    return user as UserResponse;
   } catch (error: any) {
     throw new Error(`Failed to fetch user: ${error.message}`);
   }
 }
 
-export async function updateUser(userId: string, updates: any) {
+export async function updateUser(userId: string, updates: UserUpdateRequest) {
   try {
     await connectDB();
     const updatedUser = await User.findByIdAndUpdate(userId, updates, {
       new: true,
     });
     if (!updatedUser) throw new Error("User not found");
-    return updatedUser;
+    return updatedUser as UserResponse;
   } catch (error: any) {
     throw new Error(`Failed to update user: ${error.message}`);
   }

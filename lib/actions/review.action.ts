@@ -3,12 +3,12 @@ import { connectDB } from "../connection";
 import { Product } from "../models/product.model";
 import { Review } from "../models/review.model";
 
-export async function createReview(
-  userId: string,
-  productId: string,
-  rating: number,
-  comment: string
-) {
+export async function createReview({
+  user: userId,
+  comment,
+  product: productId,
+  rating,
+}: ReviewRequest) {
   try {
     await connectDB();
     const review = await Review.create({
@@ -22,7 +22,7 @@ export async function createReview(
         reviews: review._id,
       },
     });
-    return review;
+    return review as ReviewResponse;
   } catch (error: any) {
     throw new Error(`Failed to create review: ${error.message}`);
   }
@@ -31,19 +31,19 @@ export async function getReviewsByProduct(productId: string) {
   try {
     await connectDB();
     const reviews = await Review.find({ product: productId }).populate("user");
-    return reviews;
+    return reviews as ReviewResponse[];
   } catch (error: any) {
     throw new Error(`Failed to fetch reviews: ${error.message}`);
   }
 }
-export async function updateReview(reviewId: string, updates: any) {
+export async function updateReview(reviewId: string, updates: ReviewRequest) {
   try {
     await connectDB();
     const updatedReview = await Review.findByIdAndUpdate(reviewId, updates, {
       new: true,
     });
     if (!updatedReview) throw new Error("Review not found");
-    return updatedReview;
+    return updatedReview as ReviewResponse;
   } catch (error: any) {
     throw new Error(`Failed to update review: ${error.message}`);
   }

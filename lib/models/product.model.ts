@@ -1,4 +1,3 @@
-
 import mongoose from "mongoose";
 const ProductSchema = new mongoose.Schema(
   {
@@ -18,7 +17,7 @@ const ProductSchema = new mongoose.Schema(
     reviews: [
       {
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Rating",
+        ref: "Review",
       },
     ],
     isFeatured: { type: Boolean, default: false },
