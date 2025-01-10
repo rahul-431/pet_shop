@@ -45,6 +45,22 @@ type BlogType = {
 };
 
 // for API data
+
+type BlogRequest = {
+  author: string;
+  image: string;
+  title: string;
+  text: string;
+};
+type BlogResponse = {
+  _id: string;
+  author: string;
+  image: string;
+  title: string;
+  text: string;
+  createdAt: string;
+  updatedAt: string;
+};
 type CategoryRequest = {
   name: string;
   description?: string;
