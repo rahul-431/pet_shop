@@ -1,6 +1,9 @@
 import { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../globals.css";
+import AppSidebar from "@/components/admin/AppSidebar";
+import { SidebarProvider } from "@/context/SidebarContext";
+import Navbar from "@/components/admin/Navbar";
 export const metadata: Metadata = {
   title: "Dashboard-Waggy",
   description: "Pet shop",
@@ -15,7 +18,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
@@ -25,7 +28,16 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-        {children}
+        <SidebarProvider>
+          <div className="flex h-screen py-4 gap-4">
+            <AppSidebar />
+            <main className="flex flex-col gap-5 w-full pe-6">
+              <Navbar />
+              <hr />
+              {children}
+            </main>
+          </div>
+        </SidebarProvider>
       </body>
     </html>
   );

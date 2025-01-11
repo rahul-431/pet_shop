@@ -216,3 +216,6 @@ type UserResponse = {
   wishlist: WishlistResponse[];
   cart: CartResponse[];
 };
+type DUType = {
+  id: string;
+};

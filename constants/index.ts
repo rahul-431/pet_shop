@@ -35,6 +35,7 @@ export const NavLinks = [
   },
 ];
 
+
 export const FooterQuickLinks = [
   {
     href: "/",
